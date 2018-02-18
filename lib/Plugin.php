@@ -15,6 +15,8 @@
 
 namespace Haydn\CustomDiviModules;
 
+use Haydn\CustomDiviModules\Admin\AdminMenus;
+
 /**
  * The core plugin class.
  *
@@ -95,13 +97,17 @@ class Plugin {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_admin_hooks() {
-
+	private function define_admin_hooks()
+	{
+		// General admin hooks
 		$plugin_admin = new Admin( $this );
-
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		// Admin menus.
+		$plugin_admin_menus = new AdminMenus($this);
+		$this->loader->add_action( 'admin_menu', $plugin_admin_menus, 'addTopMenu' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin_menus, 'addSubMenus' );
 	}
 
 	/**
