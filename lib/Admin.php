@@ -10,7 +10,7 @@
  * @subpackage PluginName/admin
  */
 
-namespace Vendor_Name\Plugin_Name;
+namespace Haydn\CustomDiviModules;
 
 /**
  * The dashboard-specific functionality of the plugin.
@@ -37,7 +37,7 @@ class Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since 1.0.0
-	 * 
+	 *
 	 * @param Plugin $plugin This plugin's instance.
 	 */
 	public function __construct( Plugin $plugin ) {
@@ -64,7 +64,7 @@ class Admin {
 		 */
 
 		\wp_enqueue_style(
-			$this->plugin->get_plugin_name(),
+			$this->plugin->get_CustomDiviModules(),
 			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/styles/plugin-name-admin.css',
 			array(),
 			$this->plugin->get_version(),
@@ -92,7 +92,7 @@ class Admin {
 		 */
 
 		\wp_enqueue_script(
-			$this->plugin->get_plugin_name(),
+			$this->plugin->get_CustomDiviModules(),
 			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/plugin-name-admin.js',
 			array( 'jquery' ),
 			$this->plugin->get_version(),

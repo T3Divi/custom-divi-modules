@@ -13,7 +13,7 @@
  * @subpackage PluginName/includes
  */
 
-namespace Vendor_Name\Plugin_Name;
+namespace Haydn\CustomDiviModules;
 
 /**
  * The core plugin class.
@@ -83,7 +83,7 @@ class Plugin {
 	private function set_locale() {
 
 		$plugin_i18n = new I18n();
-		$plugin_i18n->set_domain( $this->get_plugin_name() );
+		$plugin_i18n->set_domain( $this->get_CustomDiviModules() );
 		$plugin_i18n->load_plugin_textdomain();
 
 	}
@@ -142,7 +142,7 @@ class Plugin {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_plugin_name() {
+	public function get_CustomDiviModules() {
 		return $this->pluginname;
 	}
 

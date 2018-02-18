@@ -8,20 +8,20 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
+ * @link              https://github.com/twitchedy/haydn-custom-divi-modules
  * @since             1.0.0
- * @package           Plugin_Name
+ * @package           CustomDiviModules
  *
  * @wordpress-plugin
- * Plugin Name:       WordPress Plugin Boilerplate
- * Plugin URI:        http://example.com/plugin-name-uri/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress dashboard.
+ * Plugin Name:       Custom Divi Modules
+ * Plugin URI:        https://github.com/twitchedy/haydn-custom-divi-modules
+ * Description:       Provides a GUI for creating custom modules for Divi.
  * Version:           1.0.0
- * Author:            Your Name or Your Company
- * Author URI:        http://example.com/
+ * Author:            Haydn Smith
+ * Author URI:        https://github.com/twitchedy
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       plugin-name
+ * Text Domain:       CustomDiviModules
  * Domain Path:       /languages
  */
 
@@ -38,13 +38,13 @@ if ( ! defined( 'WPINC' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in lib/Activator.php
  */
-\register_activation_hook( __FILE__, '\Vendor_Name\Plugin_Name\Activator::activate' );
+\register_activation_hook( __FILE__, '\Haydn\CustomDiviModules\Activator::activate' );
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in lib/Deactivator.php
  */
-\register_deactivation_hook( __FILE__, '\Vendor_Name\Plugin_Name\Deactivator::deactivate' );
+\register_deactivation_hook( __FILE__, '\Haydn\CustomDiviModules\Deactivator::deactivate' );
 
 /**
  * Begins execution of the plugin.
@@ -52,6 +52,6 @@ if ( ! defined( 'WPINC' ) ) {
  * @since    1.0.0
  */
 \add_action( 'plugins_loaded', function () {
-    $plugin = new \Vendor_Name\Plugin_Name\Plugin();
+    $plugin = new \Haydn\CustomDiviModules\Plugin();
     $plugin->run();
 } );

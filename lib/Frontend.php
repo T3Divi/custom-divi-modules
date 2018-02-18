@@ -6,11 +6,11 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/Frontend
+ * @package    CustomDiviModules
+ * @subpackage CustomDiviModules/Frontend
  */
 
-namespace Vendor_Name\Plugin_Name;
+namespace Haydn\CustomDiviModules;
 
 /**
  * The public-facing functionality of the plugin.
@@ -18,8 +18,8 @@ namespace Vendor_Name\Plugin_Name;
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the dashboard-specific stylesheet and JavaScript.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/Frontend
+ * @package    CustomDiviModules
+ * @subpackage CustomDiviModules/Frontend
  * @author     Your Name <email@example.com>
  */
 class Frontend {
@@ -37,7 +37,7 @@ class Frontend {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since 1.0.0
-	 * 
+	 *
 	 * @param Plugin $plugin This plugin's instance.
 	 */
 	public function __construct( Plugin $plugin ) {
@@ -63,7 +63,7 @@ class Frontend {
 		 */
 
 		\wp_enqueue_style(
-			$this->plugin->get_plugin_name(),
+			$this->plugin->get_CustomDiviModules(),
 			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/styles/plugin-name.css',
 			array(),
 			$this->plugin->get_version(),
@@ -90,7 +90,7 @@ class Frontend {
 		 */
 
 		\wp_enqueue_script(
-			$this->plugin->get_plugin_name(),
+			$this->plugin->get_CustomDiviModules(),
 			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/plugin-name.js',
 			array( 'jquery' ),
 			$this->plugin->get_version(),

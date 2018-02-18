@@ -10,7 +10,7 @@
  * @subpackage PluginName/includes
  */
 
-namespace Vendor_Name\Plugin_Name;
+namespace Haydn\CustomDiviModules;
 
 /**
  * Register all actions and filters for the plugin.

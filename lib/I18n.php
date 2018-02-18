@@ -13,7 +13,7 @@
  * @subpackage PluginName/includes
  */
 
-namespace Vendor_Name\Plugin_Name;
+namespace Haydn\CustomDiviModules;
 
 /**
  * Define the internationalization functionality.

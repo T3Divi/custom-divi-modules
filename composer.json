@@ -1,29 +1,25 @@
 {
-    "name": "vendor-name/plugin-name",
-    "description": "This is a short description of what the plugin does.",
+    "name": "haydn/custom-divi-modules",
+    "description": "Custom modules for Divi.",
     "type": "wordpress-plugin",
     "keywords": ["wordpress", "plugin"],
-    "homepage": "http://example.com/",
+    "homepage": "https://github.com/twitchedy/haydn-custom-divi-modules",
     "license": "GPL-2.0+",
     "authors": [
       {
-          "name": "Your Name",
-          "email": "email@example.com",
-          "homepage": "http://example.com/"
+          "name": "Haydn Smith",
+          "email": "h.smith94@gmail.com",
+          "homepage": "https://github.com/twitchedy"
       }
     ],
-    "support": {
-        "issues": "http://example.com/",
-        "source": "http://example.com/"
-    },
     "autoload": {
         "psr-4": {
-            "Vendor_Name\\Plugin_Name\\": "lib/"
+            "Haydn\\CustomDiviModules\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vendor_Name\\Tests\\Plugin_Name\\": "tests/"
+            "Haydn\\Tests\\CustomDiviModules\\": "tests/"
         }
     },
     "require": {
