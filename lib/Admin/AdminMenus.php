@@ -23,7 +23,7 @@ class AdminMenus
             'Divi Modules',
             'switch_themes',
             'haydn_divi_modules',
-            array($this, 'generatePageAll'),
+            array($this, 'generatePageList'),
             'dashicons-grid-view',
             99
         );
@@ -37,7 +37,7 @@ class AdminMenus
             'All Modules',
             'switch_themes',
             'haydn_divi_modules',
-            array($this, 'generatePageAll')
+            array($this, 'generatePageList')
         );
 
         add_submenu_page(
@@ -46,27 +46,27 @@ class AdminMenus
             'Add New',
             'switch_themes',
             'haydn_divi_modules_new',
-            array($this, 'generatePageNew')
+            array($this, 'generatePageEdit')
         );
     }
 
-    public function generatePageAll()
+    public function generatePageList()
     {
         ?>
         <div class="wrap">
             <h1><?= esc_html(get_admin_page_title()); ?></h1>
-            <div id="haydn-custom-divi-modules">
+            <div id="haydn-custom-divi-modules-list">
             </div>
         </div>
         <?php
     }
 
-    public function generatePageNew()
+    public function generatePageEdit()
     {
         ?>
         <div class="wrap">
             <h1><?= esc_html(get_admin_page_title()); ?></h1>
-            <div id="haydn-custom-divi-modules">
+            <div id="haydn-custom-divi-modules-edit">
             </div>
         </div>
         <?php

@@ -63,7 +63,7 @@ class Frontend {
 		 */
 
 		\wp_enqueue_style(
-			$this->plugin->get_CustomDiviModules(),
+			$this->plugin->get_name(),
 			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/styles/plugin-name.css',
 			array(),
 			$this->plugin->get_version(),
@@ -90,8 +90,8 @@ class Frontend {
 		 */
 
 		\wp_enqueue_script(
-			$this->plugin->get_CustomDiviModules(),
-			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/plugin-name.js',
+			$this->plugin->get_name(),
+			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/frontend.js',
 			array( 'jquery' ),
 			$this->plugin->get_version(),
 			false );

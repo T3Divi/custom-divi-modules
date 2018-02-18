@@ -45,59 +45,66 @@ class Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the Dashboard.
+	 * Register the stylesheets for the dashboard if they are needed on
+	 * the page.
 	 *
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
+		$screen = \get_current_screen();
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in PluginName_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The PluginName_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
+		if ($screen->id === 'toplevel_page_haydn_divi_modules' ||
+			$screen->id === 'divi-modules_page_haydn_divi_modules_new') {
+			\wp_enqueue_style(
+				$this->plugin->get_name(),
+				\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/styles/adminstyles.css',
+				array(),
+				$this->plugin->get_version(),
+				'all' );
 
-		\wp_enqueue_style(
-			$this->plugin->get_CustomDiviModules(),
-			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/styles/plugin-name-admin.css',
-			array(),
-			$this->plugin->get_version(),
-			'all' );
-
+			\wp_enqueue_style(
+				'vuetify',
+				\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/styles/vuetify.css',
+				array(),
+				$this->plugin->get_version(),
+				'all' );
+		}
 	}
 
 	/**
-	 * Register the JavaScript for the dashboard.
+	 * Register the JavaScript for the plugin when we are on the correct pages.
 	 *
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
+		$screen = \get_current_screen();
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in PluginName_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The PluginName_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
+		if ($screen->id === 'toplevel_page_haydn_divi_modules' ||
+			$screen->id === 'divi-modules_page_haydn_divi_modules_new') {
+			\wp_enqueue_script(
+				$this->plugin->get_name(),
+				\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/admin.js',
+				array( 'jquery' ),
+				$this->plugin->get_version(),
+				false );
 
-		\wp_enqueue_script(
-			$this->plugin->get_CustomDiviModules(),
-			\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/plugin-name-admin.js',
-			array( 'jquery' ),
-			$this->plugin->get_version(),
-			false );
+			\wp_enqueue_script(
+				$this->plugin->get_name() . '-styles',
+				\plugin_dir_url( dirname( __FILE__ ) ) . 'dist/scripts/styles.js',
+				array( 'jquery' ),
+				$this->plugin->get_version(),
+				false );
+		}
+	}
 
+	/**
+	 * Adds the CSS and icons required for Vuetify.
+	 */
+	public function add_to_head()
+	{
+		?>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+		<?php
 	}
 
 }

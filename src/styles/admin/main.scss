@@ -1,0 +1,36 @@
+#haydn-custom-divi-modules-edit {
+    background: transparent;
+
+    .application--wrap {
+        min-height: unset;
+    }
+
+    .input-group__input input,
+    .input-group__input textarea, {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    }
+
+    .card.container-card {
+        margin-top: 10px;
+        padding: 10px 20px;
+    }
+
+    .card.container-card hr.divider {
+        margin: 0 -28px 20px;
+        width: unset;
+    }
+
+    .monospace {
+        font-family: monospace;
+    }
+}

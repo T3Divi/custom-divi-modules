@@ -85,7 +85,7 @@ class Plugin {
 	private function set_locale() {
 
 		$plugin_i18n = new I18n();
-		$plugin_i18n->set_domain( $this->get_CustomDiviModules() );
+		$plugin_i18n->set_domain( $this->get_name() );
 		$plugin_i18n->load_plugin_textdomain();
 
 	}
@@ -103,6 +103,7 @@ class Plugin {
 		$plugin_admin = new Admin( $this );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_head', $plugin_admin, 'add_to_head' );
 
 		// Admin menus.
 		$plugin_admin_menus = new AdminMenus($this);
@@ -148,7 +149,7 @@ class Plugin {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_CustomDiviModules() {
+	public function get_name() {
 		return $this->pluginname;
 	}
 
